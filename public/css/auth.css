@@ -1,0 +1,66 @@
+
+
+body { 
+    font-family: sans-serif; 
+    background: linear-gradient(135deg, #342a51 0%, #c5c9d0 100%); /* Mirip background hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* ==== Login/Register Card Styles ==== */
+.login-card, .register-card {
+    width: 100%;
+    padding: 30px;
+    border-radius: 1.5rem; /* Sudut membulat lebih besar */
+    border: none; /* Hapus border default card */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Bayangan lebih kuat */
+    background-color: white; /* Latar belakang card putih */
+    text-align: center; /* Teks di tengah */
+}
+.login-card { max-width: 380px; } /* Lebar spesifik untuk login */
+.register-card { max-width: 450px; } /* Lebar spesifik untuk register */
+
+/* ==== Logo and School Name Section (Inside Card) ==== */
+.logo-section img {
+    width: 80px; /* Ukuran logo */
+    height: 80px;
+    margin-bottom: 1rem;
+}
+.school-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40; /* Warna gelap */
+    margin-bottom: 0.3rem;
+}
+.school-tagline {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+/* ==== Form General Styles ==== */
+.form-group label, .form-label { /* Target form-label umum */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block; /* Pastikan label di atas input */
+    text-align: start; /* Label rata kiri */
+    color: #343a40; /* Warna label */
+}
+.form-control {
+    border-radius: 0.5rem; /* Sudut input membulat */
+    padding: 0.8rem 1rem;
+}
+.btn-primary {
+    border-radius: 0.5rem; /* Sudut tombol membulat */
+    padding: 0.8rem 1rem;
+}
+.text-link {
+    color: #0d6efd; /* Warna link default Bootstrap */
+    text-decoration: none;
+    font-weight: 500;
+}
+.text-link:hover {
+    text-decoration: underline;
+}

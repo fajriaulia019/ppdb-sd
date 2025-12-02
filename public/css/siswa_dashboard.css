@@ -1,0 +1,155 @@
+/* public/css/siswa_dashboard.css */
+
+/* ==== Variabel CSS Kustom untuk Warna (Disesuaikan mendekati referensi gambar) ==== */
+:root {
+    --color-primary-custom: #007bff;   /* Default primary */
+    --color-info-custom: #17a2b8;      /* Default info */
+    --color-warning-custom: #ffc107;   /* Default warning */
+    --color-success-custom: #28a745;   /* Default success */
+    --color-danger-custom: #dc3545;    /* Default danger */
+    --color-secondary-custom: #6c757d; /* Default secondary */
+
+    /* Warna Spesifik dari Gambar Referensi (Estimasi) */
+    --ref-primary-blue: #0d6efd; /* Biru terang di navbar/button */
+    --ref-dark-blue: #2c3e50; /* Biru gelap sidebar */
+    --ref-card-header-bg: #f2f4f6; /* Latar header card */
+    --ref-card-border-primary: #007bff; /* Biru border (No. Pendaftaran) */
+    --ref-card-border-success: #28a745; /* Hijau border (Status Pendaftaran) */
+    --ref-card-border-form: #9b59b6; /* Ungu (Form Pendaftaran) */
+    --ref-card-border-test: #f1c40f; /* Kuning (Test Online) */
+    --ref-card-border-daftarulang: #27ae60; /* Hijau (Daftar Ulang) */
+    --ref-status-dot-active: #f39c12; /* Oranye untuk aktif timeline */
+    --ref-status-dot-completed: #2ecc71; /* Hijau untuk selesai timeline */
+    --ref-sidebar-bg: #343a40; /* Latar belakang sidebar */
+    --ref-sidebar-active-bg: #495057; /* Latar belakang aktif sidebar */
+}
+
+
+body {
+    font-family: 'Source Sans Pro', sans-serif; /* AdminLTE default font */
+    overflow-x: hidden;
+}
+
+/* ==== Sidebar Styling (AdminLTE specific overrides) ==== */
+/* AdminLTE sudah punya sidebar, kita hanya menyesuaikan sedikit */
+.main-sidebar.sidebar-dark-primary {
+    background-color: var(--ref-sidebar-bg); /* Ubah warna sidebar */
+    color: white;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: var(--ref-sidebar-active-bg); /* Ubah warna aktif menu */
+    color: white;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active i {
+    color: white; /* Ikon juga putih */
+}
+
+/* ==== Custom card styling untuk dashboard siswa ==== */
+.card-body {
+    padding: 1.25rem; /* Padding default card */
+}
+.card-header {
+    background-color: var(--ref-card-header-bg); /* Latar belakang header card */
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding: 0.75rem 1.25rem;
+}
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Warna border card sesuai referensi */
+.card.border-no-pendaftaran { border-top: 3px solid var(--ref-card-border-primary) !important; }
+.card.border-status-pendaftaran { border-top: 3px solid var(--ref-card-border-success) !important; }
+.card.border-form-pendaftaran { border-top: 3px solid var(--ref-card-border-form) !important; }
+.card.border-test-online { border-top: 3px solid var(--ref-card-border-test) !important; }
+.card.border-daftar-ulang { border-top: 3px solid var(--ref-card-border-daftarulang) !important; }
+
+/* Styling khusus untuk Small Box (jika digunakan) */
+.small-box {
+    border-radius: 0.25rem; /* Sudut membulat */
+    box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2);
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+}
+.small-box > .inner {
+    padding: 10px;
+}
+.small-box .icon {
+    color: rgba(0,0,0,.15);
+    z-index: 0;
+}
+
+
+/* Styling timeline status (sesuai gambar referensi) */
+.status-timeline ul {
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.95rem; /* Ukuran font timeline */
+}
+.status-timeline ul li {
+    padding-left: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    color: #555; /* Warna teks item timeline */
+    font-weight: 500;
+}
+.status-timeline ul li::before { /* Titik timeline */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc; /* Default color */
+}
+.status-timeline ul li.completed::before {
+    background-color: var(--ref-status-dot-completed); /* Hijau untuk selesai */
+}
+.status-timeline ul li.active::before {
+    background-color: var(--ref-status-dot-active); /* Oranye untuk aktif */
+}
+.status-timeline ul li.error::before {
+    background-color: var(--color-danger-custom); /* Merah untuk error/gagal */
+}
+.status-timeline ul li:not(:last-child)::after { /* Garis vertikal timeline */
+    content: '';
+    position: absolute;
+    left: 4px; /* Posisi garis vertikal */
+    top: 50%;
+    height: calc(100% - 10px); /* Panjang garis */
+    border-left: 2px solid #eee; /* Warna garis */
+    z-index: -1;
+}
+
+/* Menyesuaikan badge untuk status di card aksi */
+.badge {
+    padding: 0.4em 0.7em;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 0.25rem;
+}
+.badge-success { background-color: var(--ref-status-dot-completed) !important; }
+.badge-warning { background-color: var(--ref-status-dot-active) !important; }
+.badge-info { background-color: var(--color-info-custom) !important; }
+.badge-secondary { background-color: var(--color-secondary-custom) !important; }
+
+/* Menggunakan kembali style card-icon dari sebelumnya untuk konsistensi */
+.card-icon {
+    font-size: 2.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--color-primary-custom); /* Default ikon background */
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-primary-custom { color: var(--color-primary-custom) !important; }
+.text-info-custom { color: var(--color-info-custom) !important; }
+.text-warning-custom { color: var(--color-warning-custom) !important; }
+.text-success-custom { color: var(--color-success-custom) !important; }

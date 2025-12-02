@@ -1,0 +1,29 @@
+/* admin dashboard css */
+/* Custom CSS Anda bisa ditambahkan di sini */
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.sidebar-mini .main-sidebar .nav-link .nav-icon {
+    margin-left: -5px;
+}
+
+/* Penyesuaian ikon saat sidebar mini */
+/* Posisi Tombol Toggle di Navbar Utama AdminLTE */
+.main-header .navbar-nav .nav-item .nav-link[data-widget="pushmenu"] {
+    font-size: 1.5rem;
+    /* Ukuran ikon hamburger */
+}
+ .navbar-page-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #343a40; /* Warna teks gelap */
+        margin-left: 0.5rem; /* Jarak dari tombol hamburger */
+        
+    }
+        @media (max-width: 575.98px) { /* Untuk breakpoint sm (Bootstrap 576px) */
+        .navbar-page-title {
+            font-size: 1rem; /* Ukuran lebih kecil di mobile */
+        }
+    }

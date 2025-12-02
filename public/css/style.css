@@ -1,0 +1,60 @@
+/* public/css/custom.css */
+
+/* ==== General Body & Font ==== */
+body {
+    font-family: sans-serif;
+    scroll-behavior: smooth; /* Untuk scrolling halus */
+}
+
+/* ==== Navbar Brand ==== */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* ==== Hero Section ==== */
+.hero-section {
+    min-height: 80vh;
+    background-image: url('/image/background/bg5.jpg'); /* Pastikan path gambar benar dari root public/ */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+.hero-section::before { /* Overlay gelap agar teks lebih terbaca */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam 50% */
+}
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==== Section Padding (Untuk semua section agar ada jarak dan Scrollspy bekerja) ==== */
+.section-padding {
+    padding: 80px 0;
+}
+
+
+section:not(.hero-section) {
+    padding-top: 70px; 
+    margin-top: -70px; 
+}
+
+
+.nav-link.active {
+    font-weight: bold;
+   
+}
+

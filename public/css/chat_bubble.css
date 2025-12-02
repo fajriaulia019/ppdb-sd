@@ -1,0 +1,194 @@
+/* ========================================
+   PPDB LAYOUT - ADDITIONAL CSS STYLES
+   ======================================== */
+
+/* Chat Bubble Styles */
+.chat-bubble {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1050;
+    animation: pulse-chat 2s infinite;
+    text-decoration: none;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    text-decoration: none;
+}
+
+.chat-bubble .whatsapp-icon {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.chat-bubble:hover .whatsapp-icon {
+    transform: rotate(15deg);
+    color: white;
+}
+
+/* Chat tooltip */
+.chat-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1051;
+}
+
+.chat-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: #333;
+}
+
+.chat-bubble:hover .chat-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Notification badge */
+.chat-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background: #ff4757;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    animation: bounce 1s infinite;
+}
+
+/* Animations */
+@keyframes pulse-chat {
+    0% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+    }
+    100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Alert Styles */
+.alert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c7e3d0);
+    color: #155724;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f1b7bb);
+    color: #721c24;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #b8daff);
+    color: #0c5460;
+}
+
+/* Fade-in animation class */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Mobile Responsive */
+@media (max-width: 575.98px) {
+    .chat-bubble {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chat-bubble .whatsapp-icon {
+        font-size: 20px;
+    }
+    
+    .chat-tooltip {
+        font-size: 12px;
+        padding: 6px 10px;
+        right: 60px;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 767.98px) {
+    .chat-bubble {
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+/* Large Screen Adjustments */
+@media (min-width: 1200px) {
+    .chat-bubble {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .chat-bubble .whatsapp-icon {
+        font-size: 26px;
+    }
+}
